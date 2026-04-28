@@ -1,0 +1,164 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 100  # Hz
+
+    left_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    right_arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    left_gripper_controller:
+      type: position_controllers/GripperActionController
+
+    right_gripper_controller:
+      type: position_controllers/GripperActionController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+left_arm_controller:
+  ros__parameters:
+    joints:
+      - robl_joint_1
+      - robl_joint_2
+      - robl_joint_3
+      - robl_joint_4
+      - robl_joint_5
+      - robl_joint_6
+      - robl_joint_7
+    command_interfaces:
+      - position
+      #- velocity
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    open_loop_control: true
+    allow_partial_joints_goal: false
+    allow_nonzero_velocity_at_trajectory_end: false
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 10.0
+      robl_joint_1: {goal: 0.05}
+      robl_joint_2: {goal: 0.05}
+      robl_joint_3: {goal: 0.05}
+      robl_joint_4: {goal: 0.05}
+      robl_joint_5: {goal: 0.05}
+      robl_joint_6: {goal: 0.05}
+      robl_joint_7: {goal: 0.05}
+    gains:
+      robl_joint_1:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_2:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_3:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_4:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_5:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_6:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robl_joint_7:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+
+
+right_arm_controller:
+  ros__parameters:
+    joints:
+      - robr_joint_1
+      - robr_joint_2
+      - robr_joint_3
+      - robr_joint_4
+      - robr_joint_5
+      - robr_joint_6
+      - robr_joint_7
+    command_interfaces:
+      - position
+      #- velocity
+    state_interfaces:
+      - position
+      - velocity
+    state_publish_rate: 100.0
+    action_monitor_rate: 20.0
+    open_loop_control: true
+    allow_partial_joints_goal: false
+    allow_nonzero_velocity_at_trajectory_end: false
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 10.0
+      robr_joint_1: {goal: 0.05}
+      robr_joint_2: {goal: 0.05}
+      robr_joint_3: {goal: 0.05}
+      robr_joint_4: {goal: 0.05}
+      robr_joint_5: {goal: 0.05}
+      robr_joint_6: {goal: 0.05}
+      robr_joint_7: {goal: 0.05}
+    gains:
+      robr_joint_1:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_2:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_3:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_4:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_5:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_6:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+      robr_joint_7:
+        ff_velocity_scale: 1.0
+        p: 10.0
+        d: 0.0
+        i: 0.0
+
+left_gripper_controller:
+  ros__parameters:
+    joint: grpl_half_aperture_joint
+
+right_gripper_controller:
+  ros__parameters:
+    joint: grpr_half_aperture_joint

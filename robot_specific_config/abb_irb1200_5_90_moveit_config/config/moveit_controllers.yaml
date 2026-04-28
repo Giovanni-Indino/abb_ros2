@@ -1,0 +1,45 @@
+# trajectory_execution:
+#   allowed_execution_duration_scaling: 3.0
+#   allowed_goal_duration_margin: 10.0
+#   allowed_start_tolerance: 0.01
+#   execution_duration_monitoring: true
+
+trajectory_execution:
+  allowed_execution_duration_scaling: 5.0  # increase from 3.0
+  allowed_goal_duration_margin: 15.0       # increase from 10.0
+  execution_duration_monitoring: false      # disable timeout completely for now
+  allowed_start_tolerance: 0.01
+
+moveit_manage_controllers: true
+moveit_controller_manager: moveit_simple_controller_manager/MoveItSimpleControllerManager
+
+moveit_simple_controller_manager:
+  controller_names:
+    - left_arm_controller
+    - right_arm_controller
+
+left_arm_controller:
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - robl_joint_1
+    - robl_joint_2
+    - robl_joint_3
+    - robl_joint_4
+    - robl_joint_5
+    - robl_joint_6
+    - robl_joint_7
+
+right_arm_controller:
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: true
+  joints:
+    - robr_joint_1
+    - robr_joint_2
+    - robr_joint_3
+    - robr_joint_4
+    - robr_joint_5
+    - robr_joint_6
+    - robr_joint_7
