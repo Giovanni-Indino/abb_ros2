@@ -29,8 +29,8 @@ left_arm_controller:
       - robl_joint_6
       - robl_joint_7
     command_interfaces:
-      - position
-      #- velocity
+      #- position
+      - velocity
     state_interfaces:
       - position
       - velocity
@@ -98,8 +98,8 @@ right_arm_controller:
       - robr_joint_6
       - robr_joint_7
     command_interfaces:
-      - position
-      #- velocity
+      #- position
+      - velocity
     state_interfaces:
       - position
       - velocity
